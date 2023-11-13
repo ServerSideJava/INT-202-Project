@@ -12,25 +12,69 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 </head>
 <body>
-<form action="AddOfficeServlet" method="post">
-    Office Code: <input type="text" name="officeCode"><br>
-    <br>
-    Address Line 1: <input type="text" name="addressLine1"><br>
-    <br>
-    City: <input type="text" name="city"><br>
-    <br>
-    State: <input type="text" name="state"><br>
-    <br>
-    Country: <input type="text" name="country"><br>
-    <br>
-    Postal Code: <input type="text" name="postalCode"><br>
-    <br>
-    Phone: <input type="text" name="phone"><br>
-    <br>
-    Territory: <input type="text" name="territory"><br>
-    <br>
-    <input type="submit" value="Submit">
-</form>
-</form>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <title>Add Office Form</title>
+</head>
+<body>
+
+<div class="container mt-5">
+    <form action="AddOfficeServlet" method="post">
+        <div class="form-group">
+            <label for="officeCode">Office Code:</label>
+            <input type="text" class="form-control" id="officeCode" name="officeCode" required>
+        </div>
+
+        <div class="form-group">
+            <label for="addressLine1">Address Line 1:</label>
+            <input type="text" class="form-control" id="addressLine1" name="addressLine1" required>
+        </div>
+
+        <div class="form-group">
+            <label for="city">City:</label>
+            <input type="text" class="form-control" id="city" name="city" required>
+        </div>
+
+        <div class="form-group">
+            <label for="state">State:</label>
+            <input type="text" class="form-control" id="state" name="state" required>
+        </div>
+
+        <div class="form-group">
+            <label for="country">Country:</label>
+            <input type="text" class="form-control" id="country" name="country" required>
+        </div>
+
+        <div class="form-group">
+            <label for="postalCode">Postal Code:</label>
+            <input type="text" class="form-control" id="postalCode" name="postalCode" required>
+        </div>
+
+        <div class="form-group">
+            <label for="phone">Phone:</label>
+            <input type="text" class="form-control" id="phone" name="phone" required>
+        </div>
+
+        <div class="form-group">
+            <label for="territory">Territory:</label>
+            <input type="text" class="form-control" id="territory" name="territory" required>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+
+<!-- Bootstrap JS and Popper.js -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+</body>
+</html>
+
 </body>
 </html>

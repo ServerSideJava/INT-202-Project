@@ -12,14 +12,14 @@
     <br>
 
     <div class="list-group">
-        <a href="AddnewServlet" class="list-group-item list-group-item-action">Add new employee</a>
-        <a href="UpdateServlet" class="list-group-item list-group-item-action">Update employee</a>
-        <a href="DeleteServlet" class="list-group-item list-group-item-action">Delete employee</a>
-        <a href="SearchServlet" class="list-group-item list-group-item-action">Search employee</a>
+        <a href="AddnewServlet" class="list-group-item list-group-item-action">Add new employee 🚀</a>
+        <a href="UpdateServlet" class="list-group-item list-group-item-action">Update employee 🚀</a>
+        <a href="DeleteServlet" class="list-group-item list-group-item-action">Delete employee 🚀</a>
+        <a href="SearchServlet" class="list-group-item list-group-item-action">Search employee 🚀</a>
     </div>
 </div>
 <div class="container mt-5">
-    <h1 class="text-center">Database Data</h1>
+    <h1 class="text-center">Office Data</h1>
 
     <table class="table mt-3">
         <thead>

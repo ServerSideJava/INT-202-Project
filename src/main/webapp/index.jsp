@@ -11,10 +11,13 @@
 
 <a href="AddnewServlet">Add new employee</a>
 <br/>
+<br>
 <a href="UpdateServlet">Update employee</a>
 <br/>
+<br>
 <a href="DeleteServlet">Delete employeee</a>
 <br/>
+<br>
 <a href="SearchServlet">Search employeee</a>
 </body>
 </html>

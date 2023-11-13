@@ -32,4 +32,40 @@ public class Office {
 
     @OneToMany(mappedBy = "officeCode")
     private List<Employee> employeeList;
+
+    public static void addNewOffice(String officeCode, String addressLine1, String city, String state,
+                                    String country, String postalCode, String phone, String territory) {
+        // Create an EntityManagerFactory
+        EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("default");
+
+        // Create an EntityManager
+        EntityManager entityManager = entityManagerFactory.createEntityManager();
+
+        // Create a new Office instance
+        Office newOffice = new Office();
+        newOffice.setOfficeCode(officeCode);
+        newOffice.setAddressLine1(addressLine1);
+        newOffice.setCity(city);
+        newOffice.setState(state);
+        newOffice.setCountry(country);
+        newOffice.setPostalCode(postalCode);
+        newOffice.setPhone(phone);
+        newOffice.setTerritory(territory);
+
+        // Start a transaction
+        EntityTransaction transaction = entityManager.getTransaction();
+        transaction.begin();
+
+        // Persist the new office
+        entityManager.persist(newOffice);
+
+        // Commit the transaction
+        transaction.commit();
+
+        // Close the EntityManager and EntityManagerFactory
+        entityManager.close();
+        entityManagerFactory.close();
+    }
+
 }
+

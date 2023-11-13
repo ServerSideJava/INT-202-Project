@@ -5,9 +5,16 @@
     <title>JSP - Hello World</title>
 </head>
 <body>
-<h1><%= "Hello World!" %>
+<h1><%= "Welecome to admin mode"%>
 </h1>
 <br/>
-<a href="hello-servlet">Hello Servlet</a>
+
+<a href="AddnewServlet">Add new employee</a>
+<br/>
+<a href="UpdateServlet">Update employee</a>
+<br/>
+<a href="DeleteServlet">Delete employeee</a>
+<br/>
+<a href="SearchServlet">Search employeee</a>
 </body>
 </html>

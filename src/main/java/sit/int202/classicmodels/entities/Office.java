@@ -4,6 +4,8 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.lang.reflect.Field;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -66,6 +68,25 @@ public class Office {
         entityManager.close();
         entityManagerFactory.close();
     }
+    public static List<String> getColumnNames() {
+        List<String> columnNames = new ArrayList<>();
+
+        // Use reflection to get declared fields
+        Field[] fields = Office.class.getDeclaredFields();
+        for (Field field : fields) {
+            if (field.isAnnotationPresent(Column.class)) {
+                Column columnAnnotation = field.getAnnotation(Column.class);
+                String columnName = columnAnnotation.name();
+
+                columnNames.add(columnName);
+            }
+            System.out.println(columnNames.add(field.getName()));
+//            System.out.println(Column.class.getName());
+        }
+
+        return columnNames;
+    }
+
 
 }
 

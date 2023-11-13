@@ -18,11 +18,11 @@ public class TestEntityRelationship {
                     office.getOfficeCode(), office.getAddressLine1(),
                     office.getCity(), office.getCountry());
             System.out.println("----------------------------------------------");
-            for(Employee employee : office.getEmployeeList()) {
-                System.out.printf("%8d %-10s %-12s %-20s\n",
-                        employee.getId(), employee.getFirstName(),
-                        employee.getLastName(), employee.getJobTitle());
-            }
+//            for(Employee employee : office.getEmployeeList()) {
+//                System.out.printf("%8d %-10s %-12s %-20s\n",
+//                        employee.getId(), employee.getFirstName(),
+//                        employee.getLastName(), employee.getJobTitle());
+//            }
             System.out.println();
         }
         em.close();

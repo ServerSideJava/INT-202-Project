@@ -28,11 +28,11 @@ public class TestQuery {
         }
         System.out.println("-------------------------");
         List<Employee> employees = em.createNamedQuery("EMPLOYEE.FINDALL").getResultList();
-        for(Employee employee : employees) {
-            System.out.printf("%4d %-10s %-12s %-20s\n",
-                    employee.getId(), employee.getFirstName(),
-                    employee.getLastName(), employee.getJobTitle());
-        }
-        em.close();
-    }
-}
+//        for(Employee employee : employees) {
+//            System.out.printf("%4d %-10s %-12s %-20s\n",
+//                    employee.getId(), employee.getFirstName(),
+//                    employee.getLastName(), employee.getJobTitle());
+//        }
+//        em.close();
+//    }
+}}

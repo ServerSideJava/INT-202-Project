@@ -23,7 +23,6 @@ public class Employee {
     private String email;
     private String officeCode;
     private Integer reportsTo;
-    private String jobTitle;
     @ManyToOne
     @JoinColumn(name = "officeCode",insertable = false,updatable = false)
     private Office office;

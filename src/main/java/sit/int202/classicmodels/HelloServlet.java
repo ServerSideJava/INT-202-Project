@@ -1,10 +1,12 @@
 package sit.int202.classicmodels;
 
 import java.io.*;
+import java.util.List;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
+import sit.int202.classicmodels.entities.Office;
 
 @WebServlet(name = "helloServlet", value = "/hello-servlet")
 public class HelloServlet extends HttpServlet {
@@ -18,8 +20,12 @@ public class HelloServlet extends HttpServlet {
         response.setContentType("text/html");
 
         // Hello
+
         System.out.println("It run hello servlet" );
+        List<String> columns = Office.getColumnNames();
+
         request.getRequestDispatcher("index.jsp").forward(request,response);
+
     }
 
     public void destroy() {

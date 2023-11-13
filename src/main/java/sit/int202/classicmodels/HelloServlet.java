@@ -23,6 +23,8 @@ public class HelloServlet extends HttpServlet {
 
         System.out.println("It run hello servlet" );
         List<String> columns = Office.getColumnNames();
+        request.setAttribute("columns",columns);
+
 
         request.getRequestDispatcher("index.jsp").forward(request,response);
 

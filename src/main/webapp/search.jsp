@@ -6,6 +6,8 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
 <html>
 <head>
     <title>Search Office</title>
@@ -18,15 +20,18 @@
     <div class="container mt-5">
 
 
-        <form action="SearchOfficeServlet" method="post">
+        <form action="SearchServlet" method="post">
             <div class="form-group">
-                <label for="country">Country:</label>
-                <input type="text" class="form-control" id="country" name="country" required>
+                <label for="searchBy">Search By:</label>
+                <select class="form-control" id="searchBy" name="searchBy" required>
+                    <option value="country">Country</option>
+                    <option value="city">City</option>
+                </select>
             </div>
 
             <div class="form-group">
-                <label for="city">City:</label>
-                <input type="text" class="form-control" id="city" name="city" required>
+                <label for="searchTerm">Search Term:</label>
+                <input type="text" class="form-control" id="searchTerm" name="searchTerm" required>
             </div>
 
             <button type="submit" class="btn btn-primary">Search</button>
@@ -50,7 +55,19 @@
             </tr>
             </thead>
             <tbody>
-            <!-- The table rows will be populated dynamically based on search results -->
+            <!-- Loop through the search results and display them in the table -->
+            <c:forEach var="office" items="${searchResults}">
+                <tr>
+                    <td>${office.officeCode}</td>
+                    <td>${office.addressLine1}</td>
+                    <td>${office.city}</td>
+                    <td>${office.state}</td>
+                    <td>${office.country}</td>
+                    <td>${office.postalCode}</td>
+                    <td>${office.phone}</td>
+                    <td>${office.territory}</td>
+                </tr>
+            </c:forEach>
             </tbody>
         </table>
     </div>

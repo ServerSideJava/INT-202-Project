@@ -23,7 +23,7 @@
 <body>
 
 <div class="container mt-5">
-    <form action="AddOfficeServlet" method="post">
+    <form action="AddnewServlet" method="post">
         <div class="form-group">
             <label for="officeCode">Office Code:</label>
             <input type="text" class="form-control" id="officeCode" name="officeCode" required>

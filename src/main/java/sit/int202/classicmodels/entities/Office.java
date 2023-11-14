@@ -28,7 +28,7 @@ public class Office {
     private String state;
     private String country;
     private String postalCode;
-    @Column(name = "phone")
+//    @Column(name = "phone")
     private String phone;
     private String territory;
 
@@ -78,7 +78,7 @@ public class Office {
                 Column columnAnnotation = field.getAnnotation(Column.class);
                 String columnName = columnAnnotation.name();
 
-                columnNames.add(columnName);
+                columnNames.add(field.getName());
             }
             System.out.println(columnNames.add(field.getName()));
 //            System.out.println(Column.class.getName());
@@ -86,6 +86,8 @@ public class Office {
 
         return columnNames;
     }
+
+
 
 
 }

@@ -3,6 +3,10 @@ package sit.int202.classicmodels;
 import java.io.*;
 import java.util.List;
 
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.EntityManagerFactory;
+import jakarta.persistence.Persistence;
+import jakarta.persistence.TypedQuery;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
@@ -14,22 +18,45 @@ public class HelloServlet extends HttpServlet {
 
     public void init() {
         message = "Welcome to Admin mode";
+
+
     }
 
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
-        response.setContentType("text/html");
+
 
         // Hello
 
-        System.out.println("It run hello servlet" );
+        System.out.println("It run hello servlet");
         List<String> columns = Office.getColumnNames();
-        request.setAttribute("columns",columns);
+        for(String column:columns){
+            System.out.println(column);
+        }
+        request.setAttribute("columns", columns);
+        EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("default");
+        EntityManager entityManager = entityManagerFactory.createEntityManager();
+
+        try {
+            // Using FIND_ALL named query
+            TypedQuery<Office> findAllQuery = entityManager.createNamedQuery("OFFICE.FIND_ALL", Office.class);
+            List<Office> allOffices = findAllQuery.getResultList();
+
+            // Set the result as a request attribute
+            request.setAttribute("allOffices", allOffices);
+
+            // Forward the request to a JSP for rendering
+
+        } finally {
+            // Close the EntityManager
+            if (entityManager != null && entityManager.isOpen()) {
+                entityManager.close();
+            }
 
 
-        request.getRequestDispatcher("index.jsp").forward(request,response);
+            request.getRequestDispatcher("index.jsp").forward(request, response);
 
-    }
+        }
 
-    public void destroy() {
+
     }
 }

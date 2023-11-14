@@ -26,7 +26,7 @@
     <table class="table mt-3">
         <thead>
         <tr>
-            <c:forEach var = "column" items="${columns}">
+            <c:forEach var="column" items="${columns}">
                 <th scope="col">${column}</th>
 
             </c:forEach>
@@ -37,11 +37,26 @@
         </thead>
         <tbody>
         <!-- Replace the following rows with your actual database data -->
-        <tr>
-            <th scope="row">1</th>
-            <td>John Doe</td>
-            <!-- Add more cells based on your database structure -->
-        </tr>
+
+        <c:forEach var="office" items="${allOffices}">
+            <tr>
+                <th scope="row">${office.officeCode}</th>
+                <td>${office.addressLine1}</td>
+                <td>${office.addressLine2}</td>
+                <td>${office.city}</td>
+                <td>${office.state}</td>
+                <td>${office.country}</td>
+                <td>${office.postalCode}</td>
+                <td>${office.phone}</td>
+                <td>${office.territory}</td>
+
+            </tr>
+
+        </c:forEach>
+        <th scope="row">1</th>
+        <td>John Doe</td>
+        <!-- Add more cells based on your database structure -->
+
         <!-- Repeat rows for each record -->
 
         <!-- Add more rows based on your database data -->

@@ -16,7 +16,7 @@
 <div class="container mt-5">
     <h1 class="text-center">Update Office Data</h1>
 
-    <form action="UpdateOfficeServlet" method="post">
+    <form action="UpdateServlet" method="post">
         <div class="form-group">
             <label for="officeId">Office ID:</label>
             <input type="text" class="form-control" id="officeId" name="officeId" required>
